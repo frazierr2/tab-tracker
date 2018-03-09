@@ -20,6 +20,15 @@ app.get('/status', (req, res) => {
     });
 });
 
+app.post('/register', (req, res) => {
+    res.send({
+        // message: 'Your user was registered! Have Fun!'
+        // *** Or ***
+        // If we want to throw in the user email for example we could do
+        message: `Hello ${req.body.email}! Your user was registered! Have Fun.`
+    });
+});
+
 // Listen to the server. Running on Port 8081 unless overwritten by environment
 // variables with the (proccess.env.PORT) section
 app.listen(process.env.PORT || 8081);
